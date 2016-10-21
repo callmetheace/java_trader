@@ -20,6 +20,7 @@ import java.util.Scanner;
 public class Driver {
 
     public static void main(String[] args) {
+      
         
         //Array of stocks/bonds FEED
         Asset[] marketList = {
@@ -50,6 +51,10 @@ public class Driver {
         double STARTING_BALANCE = 100000;
         Account MyAccount = new Account(STARTING_BALANCE);
         Account YourAccount = new Account(STARTING_BALANCE);
+        
+        //Initialize Users
+        User newUser = new User("aarondavid07","password","Aaron Villavicencio","mr.aaronv@yahoo.com","860 NE 207TH TERR APT 106 Miami, FL 33179");
+        MyAccount.users.add(newUser);
        
         //Purchase Assets
         MyAccount.buy(marketList[1], 10);
@@ -77,13 +82,9 @@ public class Driver {
         while(enter)
         {
                 //Menu
-                System.out.print(
-                "Menu \n" +
-                        "[1] Select Asset to Print \n" +
-                        "[2] Print All Assets \n" +
-                        "[99] Exit \n" +
-                        "Select your action from the menu (Enter number): "
-                );
+                MyAccount.printUsers();
+                MyAccount.printMenu();
+           
 
                 try
                 {

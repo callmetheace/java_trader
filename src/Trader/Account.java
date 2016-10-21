@@ -13,9 +13,11 @@ package Trader;
  * Account Class 
  */
 
-//import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Account {
+    
+    ArrayList<User> users = new ArrayList<User>();
 
     private static double interestRate;
     private static double dividendRate;
@@ -25,6 +27,7 @@ public class Account {
     //Array of 20 Assets
     final int NUM_ITEMS = 20;
     private Asset[] assetList = new Asset[NUM_ITEMS];
+    
     
     public Account()
     {        
@@ -178,5 +181,22 @@ public class Account {
         return accountName;
     }
     
+    public void printMenu()
+    {
+        System.out.print(
+         "Menu \n" +
+        "[1] Select Asset to Print \n" +
+        "[2] Print All Assets \n" +
+        "[99] Exit \n" +
+        "Select your action from the menu (Enter number): " + "\n"
+        );
+}
+    
+    public void printUsers()
+    {
+        
+     for (User name: users)
+         System.out.println("Username: " + name.getUsername());
+    }
     
 } // EOF
